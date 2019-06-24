@@ -1,0 +1,58 @@
+PODS:
+  - MaterialComponents/AnimationTiming (84.1.1)
+  - MaterialComponents/Buttons (84.1.1):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (84.1.1):
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (84.1.1)
+  - MaterialComponents/private/Math (84.1.1)
+  - MaterialComponents/Ripple (84.1.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (84.1.1)
+  - MaterialComponents/ShadowLayer (84.1.1):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (84.1.1):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Typography (84.1.1):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
+  - Realm (3.15.0):
+    - Realm/Headers (= 3.15.0)
+  - Realm/Headers (3.15.0)
+  - RealmSwift (3.15.0):
+    - Realm (= 3.15.0)
+
+DEPENDENCIES:
+  - MaterialComponents/Buttons
+  - RealmSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  MaterialComponents: 85832ad0a4a7c0113f67330fa135b9702aae7f93
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  Realm: 9b834e1be6062f544805252c812348872dc5d4ed
+  RealmSwift: 8a41886f8ab6efef9eb8df97de2f2bb911561a79
+
+PODFILE CHECKSUM: d2ba9588b44da49310554b462e59056d6b092cfa
+
+COCOAPODS: 1.6.1
