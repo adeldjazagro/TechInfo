@@ -6,6 +6,11 @@ target 'TechInfo' do
   use_frameworks!
 pod 'RealmSwift'
 pod 'MaterialComponents/Buttons'
+pod'Firebase'
+	pod'Firebase/Database'
+	pod 'Firebase/Analytics'
+	pod 'Firebase/Auth'
+pod 'Firebase/Storage'
 
   # Pods for TechInfo
 

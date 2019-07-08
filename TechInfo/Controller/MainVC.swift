@@ -40,7 +40,7 @@ class MainVC: UIViewController {
     @IBAction func loginPressed(_ sender: Any) {
         let mainTabController = storyboard?.instantiateViewController(withIdentifier: "MainTabController") as! MainTabController
         
-         present(mainTabController, animated: true, completion: nil)
+        present(mainTabController, animated: true, completion: nil)
         
     }
     
