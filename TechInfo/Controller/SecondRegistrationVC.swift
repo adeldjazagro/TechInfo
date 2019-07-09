@@ -69,10 +69,17 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
         imagePicker.delegate = self
         
         ReturnBtn.isHidden = true
+        ReturnBtn.addTarget(self, action:#selector(logout), for: .touchUpInside)
         
-       // ReturnBtn.addTarget(self, action: Selector(segueToCreate(sender:ReturnBtn)), for: UIControl.Event.touchUpInside)
         
-        
+    }
+    
+    
+   @IBAction func logout(sender: UIButton){
+       let uid = Auth.auth().currentUser
+        if uid != nil {
+            try! Auth.auth().signOut()
+        }
     }
     
     @objc func openImagePicker(_ sender:Any) {
@@ -188,14 +195,7 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
         
     }
     
-    @IBAction func segueToCreate(sender: UIButton) {
-        // do something
-        performSegue(withIdentifier: "ReturnToMain", sender: nil)
-    }
-   // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-   // }
+
     
     
     func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
