@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1620AD8990E698F866ABBF75 /* Pods_TechInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F925081BADCC71B56332D9 /* Pods_TechInfo.framework */; };
+		0C3302BEDEAE6E9DD0126EE9 /* Pods_TechInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992EACBD84D83D964933137D /* Pods_TechInfo.framework */; };
+		F50C96D222E73F3500379397 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F53AE6582281AECB00A68B2E /* Info.plist */; };
+		F50C96D822E7530900379397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50C96D022E7398000379397 /* Main.storyboard */; };
+		F50C96EA22E8A4A600379397 /* invoiceComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C96E922E8A4A600379397 /* invoiceComposer.swift */; };
+		F50C96EC22E8A4F400379397 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C96EB22E8A4F400379397 /* CustomPrintPageRenderer.swift */; };
+		F50C96F222E998EC00379397 /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = F50C96EF22E998BE00379397 /* single_item.html */; };
+		F50C96F722E999CC00379397 /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = F50C96F622E999B400379397 /* last_item.html */; };
+		F50C970C22EF08BE00379397 /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = F50C970B22EF08BE00379397 /* invoice.html */; };
+		F50C971022F0721C00379397 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C970F22F0721C00379397 /* ProfileViewController.swift */; };
+		F50C971222F081D600379397 /* EditInformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C971122F081D600379397 /* EditInformationsViewController.swift */; };
+		F50C971422F44B8600379397 /* AddClientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C971322F44B8600379397 /* AddClientVC.swift */; };
+		F50C971622F44BD300379397 /* ClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C971522F44BD300379397 /* ClientsViewController.swift */; };
 		F50EBB872295894B007FF08E /* FactureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50EBB862295894B007FF08E /* FactureCell.swift */; };
 		F50EBBA9229D540F007FF08E /* NoteDeFraisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50EBBA8229D540F007FF08E /* NoteDeFraisVC.swift */; };
 		F50EBBAB229D78B9007FF08E /* NoteDescVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50EBBAA229D78B9007FF08E /* NoteDescVC.swift */; };
 		F513711322C6A32600B01587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F513711222C6A32600B01587 /* GoogleService-Info.plist */; };
+		F51F68B922DCAA7F002E3A08 /* FactureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51F68B822DCAA7F002E3A08 /* FactureViewCell.swift */; };
+		F51F68BB22DCD473002E3A08 /* FactureTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51F68BA22DCD473002E3A08 /* FactureTestVC.swift */; };
+		F51F68C322DDEFA5002E3A08 /* ProduitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51F68C222DDEFA5002E3A08 /* ProduitViewCell.swift */; };
+		F51F68CF22E5D6F1002E3A08 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51F68CE22E5D6F1002E3A08 /* AddItemViewController.swift */; };
 		F53AE64B2281AECA00A68B2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AE64A2281AECA00A68B2E /* AppDelegate.swift */; };
 		F53AE64D2281AECA00A68B2E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AE64C2281AECA00A68B2E /* FirstViewController.swift */; };
 		F53AE64F2281AECA00A68B2E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AE64E2281AECA00A68B2E /* SecondViewController.swift */; };
-		F53AE6522281AECA00A68B2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53AE6502281AECA00A68B2E /* Main.storyboard */; };
 		F53AE6572281AECB00A68B2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53AE6552281AECB00A68B2E /* LaunchScreen.storyboard */; };
 		F53AE6602281B4B500A68B2E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AE65F2281B4B500A68B2E /* MainVC.swift */; };
 		F53AE6632281B56F00A68B2E /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53AE6622281B56F00A68B2E /* CurrencyTextField.swift */; };
@@ -29,25 +43,38 @@
 		F5A427C622A66F14007E6084 /* DevisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A427C522A66F14007E6084 /* DevisVC.swift */; };
 		F5A427C822A68232007E6084 /* DevisDescVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A427C722A68232007E6084 /* DevisDescVC.swift */; };
 		F5A427CA22A6825D007E6084 /* DevisAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A427C922A6825D007E6084 /* DevisAddVC.swift */; };
-		F5A427CC22A68302007E6084 /* FactureDescVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A427CB22A68302007E6084 /* FactureDescVC.swift */; };
-		F5A427CE22A68353007E6084 /* FactureAddVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A427CD22A68353007E6084 /* FactureAddVc.swift */; };
+		F5A427CC22A68302007E6084 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A427CB22A68302007E6084 /* PreviewViewController.swift */; };
 		F5F156712284776100551D25 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F156702284776100551D25 /* Base.swift */; };
 		F5F15673228C45C700551D25 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F15672228C45C700551D25 /* MainTabController.swift */; };
 		F5F15679228EC2A900551D25 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F15678228EC2A900551D25 /* TransactionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		47F925081BADCC71B56332D9 /* Pods_TechInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8B5F121D8E6C3D2846F4558 /* Pods-TechInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechInfo.debug.xcconfig"; path = "Target Support Files/Pods-TechInfo/Pods-TechInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		992EACBD84D83D964933137D /* Pods_TechInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3709074F497C469062A57EC /* Pods-TechInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechInfo.release.xcconfig"; path = "Target Support Files/Pods-TechInfo/Pods-TechInfo.release.xcconfig"; sourceTree = "<group>"; };
+		D3230ECDED72EE2DE3A89572 /* Pods-TechInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechInfo.debug.xcconfig"; path = "Target Support Files/Pods-TechInfo/Pods-TechInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		F50C96D022E7398000379397 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F50C96E922E8A4A600379397 /* invoiceComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invoiceComposer.swift; sourceTree = "<group>"; };
+		F50C96EB22E8A4F400379397 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
+		F50C96EF22E998BE00379397 /* single_item.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = single_item.html; sourceTree = "<group>"; };
+		F50C96F622E999B400379397 /* last_item.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = last_item.html; sourceTree = "<group>"; };
+		F50C970B22EF08BE00379397 /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = invoice.html; path = ../../facture/invoice.html; sourceTree = "<group>"; };
+		F50C970F22F0721C00379397 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F50C971122F081D600379397 /* EditInformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInformationsViewController.swift; sourceTree = "<group>"; };
+		F50C971322F44B8600379397 /* AddClientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientVC.swift; sourceTree = "<group>"; };
+		F50C971522F44BD300379397 /* ClientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsViewController.swift; sourceTree = "<group>"; };
 		F50EBB862295894B007FF08E /* FactureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactureCell.swift; sourceTree = "<group>"; };
 		F50EBBA8229D540F007FF08E /* NoteDeFraisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDeFraisVC.swift; sourceTree = "<group>"; };
 		F50EBBAA229D78B9007FF08E /* NoteDescVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDescVC.swift; sourceTree = "<group>"; };
 		F513711222C6A32600B01587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F51F68B822DCAA7F002E3A08 /* FactureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactureViewCell.swift; sourceTree = "<group>"; };
+		F51F68BA22DCD473002E3A08 /* FactureTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactureTestVC.swift; sourceTree = "<group>"; };
+		F51F68C222DDEFA5002E3A08 /* ProduitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduitViewCell.swift; sourceTree = "<group>"; };
+		F51F68CE22E5D6F1002E3A08 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		F53AE6472281AECA00A68B2E /* TechInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F53AE64A2281AECA00A68B2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F53AE64C2281AECA00A68B2E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		F53AE64E2281AECA00A68B2E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		F53AE6512281AECA00A68B2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F53AE6562281AECB00A68B2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F53AE6582281AECB00A68B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F53AE65F2281B4B500A68B2E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -62,12 +89,10 @@
 		F5A427C522A66F14007E6084 /* DevisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevisVC.swift; sourceTree = "<group>"; };
 		F5A427C722A68232007E6084 /* DevisDescVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevisDescVC.swift; sourceTree = "<group>"; };
 		F5A427C922A6825D007E6084 /* DevisAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevisAddVC.swift; sourceTree = "<group>"; };
-		F5A427CB22A68302007E6084 /* FactureDescVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactureDescVC.swift; sourceTree = "<group>"; };
-		F5A427CD22A68353007E6084 /* FactureAddVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactureAddVc.swift; sourceTree = "<group>"; };
+		F5A427CB22A68302007E6084 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		F5F156702284776100551D25 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		F5F15672228C45C700551D25 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		F5F15678228EC2A900551D25 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
-		FDFD983E4452937A83E59A17 /* Pods-TechInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechInfo.release.xcconfig"; path = "Target Support Files/Pods-TechInfo/Pods-TechInfo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,28 +100,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1620AD8990E698F866ABBF75 /* Pods_TechInfo.framework in Frameworks */,
+				0C3302BEDEAE6E9DD0126EE9 /* Pods_TechInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5414B8E1043E721731EBF331 /* Pods */ = {
+		050E4E36B6CD8B5EE9FEF355 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E8B5F121D8E6C3D2846F4558 /* Pods-TechInfo.debug.xcconfig */,
-				FDFD983E4452937A83E59A17 /* Pods-TechInfo.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		DD62CB4807073B44BC015C2A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				47F925081BADCC71B56332D9 /* Pods_TechInfo.framework */,
+				992EACBD84D83D964933137D /* Pods_TechInfo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8180C31C547639E68042D112 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3230ECDED72EE2DE3A89572 /* Pods-TechInfo.debug.xcconfig */,
+				B3709074F497C469062A57EC /* Pods-TechInfo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		F53AE63E2281AECA00A68B2E = {
@@ -104,8 +130,8 @@
 			children = (
 				F53AE6492281AECA00A68B2E /* TechInfo */,
 				F53AE6482281AECA00A68B2E /* Products */,
-				5414B8E1043E721731EBF331 /* Pods */,
-				DD62CB4807073B44BC015C2A /* Frameworks */,
+				8180C31C547639E68042D112 /* Pods */,
+				050E4E36B6CD8B5EE9FEF355 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,7 +151,10 @@
 				F53AE6612281B52000A68B2E /* Views */,
 				F53AE65E2281B40400A68B2E /* Controller */,
 				F53AE64A2281AECA00A68B2E /* AppDelegate.swift */,
-				F53AE6502281AECA00A68B2E /* Main.storyboard */,
+				F50C970B22EF08BE00379397 /* invoice.html */,
+				F50C96EF22E998BE00379397 /* single_item.html */,
+				F50C96F622E999B400379397 /* last_item.html */,
+				F50C96D022E7398000379397 /* Main.storyboard */,
 				F53AE6552281AECB00A68B2E /* LaunchScreen.storyboard */,
 				F513711222C6A32600B01587 /* GoogleService-Info.plist */,
 				F5A427BA22A53E18007E6084 /* Assets.xcassets */,
@@ -141,6 +170,7 @@
 				F5F15672228C45C700551D25 /* MainTabController.swift */,
 				F53AE64E2281AECA00A68B2E /* SecondViewController.swift */,
 				F53AE64C2281AECA00A68B2E /* FirstViewController.swift */,
+				F51F68C222DDEFA5002E3A08 /* ProduitViewCell.swift */,
 				F50EBBA8229D540F007FF08E /* NoteDeFraisVC.swift */,
 				F50EBBAA229D78B9007FF08E /* NoteDescVC.swift */,
 				F5A427B622A51DBB007E6084 /* RegistrationVC.swift */,
@@ -150,8 +180,15 @@
 				F5A427C522A66F14007E6084 /* DevisVC.swift */,
 				F5A427C722A68232007E6084 /* DevisDescVC.swift */,
 				F5A427C922A6825D007E6084 /* DevisAddVC.swift */,
-				F5A427CB22A68302007E6084 /* FactureDescVC.swift */,
-				F5A427CD22A68353007E6084 /* FactureAddVc.swift */,
+				F5A427CB22A68302007E6084 /* PreviewViewController.swift */,
+				F51F68BA22DCD473002E3A08 /* FactureTestVC.swift */,
+				F51F68CE22E5D6F1002E3A08 /* AddItemViewController.swift */,
+				F50C96E922E8A4A600379397 /* invoiceComposer.swift */,
+				F50C96EB22E8A4F400379397 /* CustomPrintPageRenderer.swift */,
+				F50C970F22F0721C00379397 /* ProfileViewController.swift */,
+				F50C971122F081D600379397 /* EditInformationsViewController.swift */,
+				F50C971322F44B8600379397 /* AddClientVC.swift */,
+				F50C971522F44BD300379397 /* ClientsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,6 +200,7 @@
 				F5F15678228EC2A900551D25 /* TransactionCell.swift */,
 				F50EBB862295894B007FF08E /* FactureCell.swift */,
 				F5A427B4229FF03F007E6084 /* floatingTextField.swift */,
+				F51F68B822DCAA7F002E3A08 /* FactureViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,11 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F53AE65B2281AECB00A68B2E /* Build configuration list for PBXNativeTarget "TechInfo" */;
 			buildPhases = (
-				9D944734A6BFBEDFED6E0CB3 /* [CP] Check Pods Manifest.lock */,
+				CF2ACD06EEA7B4245D99EE70 /* [CP] Check Pods Manifest.lock */,
 				F53AE6432281AECA00A68B2E /* Sources */,
 				F53AE6442281AECA00A68B2E /* Frameworks */,
 				F53AE6452281AECA00A68B2E /* Resources */,
-				0D03C2CEDEADDE261E6E64FB /* [CP] Embed Pods Frameworks */,
+				44BDF7BA7C73609077A41A66 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,16 +282,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F53AE6572281AECB00A68B2E /* LaunchScreen.storyboard in Resources */,
+				F50C96D822E7530900379397 /* Main.storyboard in Resources */,
+				F50C96F722E999CC00379397 /* last_item.html in Resources */,
 				F513711322C6A32600B01587 /* GoogleService-Info.plist in Resources */,
+				F50C970C22EF08BE00379397 /* invoice.html in Resources */,
 				F5A427BE22A56858007E6084 /* Assets.xcassets in Resources */,
-				F53AE6522281AECA00A68B2E /* Main.storyboard in Resources */,
+				F50C96D222E73F3500379397 /* Info.plist in Resources */,
+				F50C96F222E998EC00379397 /* single_item.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D03C2CEDEADDE261E6E64FB /* [CP] Embed Pods Frameworks */ = {
+		44BDF7BA7C73609077A41A66 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,7 +312,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TechInfo/Pods-TechInfo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9D944734A6BFBEDFED6E0CB3 /* [CP] Check Pods Manifest.lock */ = {
+		CF2ACD06EEA7B4245D99EE70 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -300,24 +342,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5F156712284776100551D25 /* Base.swift in Sources */,
+				F51F68BB22DCD473002E3A08 /* FactureTestVC.swift in Sources */,
 				F5A427B5229FF03F007E6084 /* floatingTextField.swift in Sources */,
+				F51F68CF22E5D6F1002E3A08 /* AddItemViewController.swift in Sources */,
 				F5A427C822A68232007E6084 /* DevisDescVC.swift in Sources */,
+				F50C971222F081D600379397 /* EditInformationsViewController.swift in Sources */,
 				F50EBBAB229D78B9007FF08E /* NoteDescVC.swift in Sources */,
 				F53AE64F2281AECA00A68B2E /* SecondViewController.swift in Sources */,
+				F51F68C322DDEFA5002E3A08 /* ProduitViewCell.swift in Sources */,
 				F5F15673228C45C700551D25 /* MainTabController.swift in Sources */,
-				F5A427CC22A68302007E6084 /* FactureDescVC.swift in Sources */,
+				F5A427CC22A68302007E6084 /* PreviewViewController.swift in Sources */,
+				F50C96EC22E8A4F400379397 /* CustomPrintPageRenderer.swift in Sources */,
 				F5A427C422A66ED8007E6084 /* FactureVC.swift in Sources */,
+				F50C971422F44B8600379397 /* AddClientVC.swift in Sources */,
 				F5A427B722A51DBB007E6084 /* RegistrationVC.swift in Sources */,
 				F53AE6602281B4B500A68B2E /* MainVC.swift in Sources */,
 				F53AE64B2281AECA00A68B2E /* AppDelegate.swift in Sources */,
 				F53AE6632281B56F00A68B2E /* CurrencyTextField.swift in Sources */,
 				F5F15679228EC2A900551D25 /* TransactionCell.swift in Sources */,
+				F51F68B922DCAA7F002E3A08 /* FactureViewCell.swift in Sources */,
+				F50C971022F0721C00379397 /* ProfileViewController.swift in Sources */,
 				F5A427C222A66E9B007E6084 /* NoteAddVC.swift in Sources */,
+				F50C971622F44BD300379397 /* ClientsViewController.swift in Sources */,
 				F56E56322294103F00F6D315 /* Extentions.swift in Sources */,
 				F50EBB872295894B007FF08E /* FactureCell.swift in Sources */,
 				F5A427C622A66F14007E6084 /* DevisVC.swift in Sources */,
-				F5A427CE22A68353007E6084 /* FactureAddVc.swift in Sources */,
 				F5A427CA22A6825D007E6084 /* DevisAddVC.swift in Sources */,
+				F50C96EA22E8A4A600379397 /* invoiceComposer.swift in Sources */,
 				F5A427C022A56C1E007E6084 /* SecondRegistrationVC.swift in Sources */,
 				F50EBBA9229D540F007FF08E /* NoteDeFraisVC.swift in Sources */,
 				F53AE64D2281AECA00A68B2E /* FirstViewController.swift in Sources */,
@@ -327,14 +378,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F53AE6502281AECA00A68B2E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F53AE6512281AECA00A68B2E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F53AE6552281AECB00A68B2E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -464,7 +507,7 @@
 		};
 		F53AE65C2281AECB00A68B2E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8B5F121D8E6C3D2846F4558 /* Pods-TechInfo.debug.xcconfig */;
+			baseConfigurationReference = D3230ECDED72EE2DE3A89572 /* Pods-TechInfo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,7 +527,7 @@
 		};
 		F53AE65D2281AECB00A68B2E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDFD983E4452937A83E59A17 /* Pods-TechInfo.release.xcconfig */;
+			baseConfigurationReference = B3709074F497C469062A57EC /* Pods-TechInfo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

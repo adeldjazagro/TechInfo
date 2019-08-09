@@ -8,15 +8,16 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 import UserNotifications
 
-
+var uiRealm = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    let currencyCode = "eur"
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -49,5 +50,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
 
+
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+
+
+    func getStringValueFormattedAsCurrency(value: String) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.currency
+        numberFormatter.currencyCode = currencyCode
+        numberFormatter.maximumFractionDigits = 2
+        
+        let formattedValue = numberFormatter.string(from: NumberFormatter().number(from: value)!)
+        return formattedValue!
+    }
+
+
+    func getDocDir() -> String {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    }
+
+}

@@ -15,7 +15,7 @@ class user : Object {
     @objc dynamic   var prenom = ""
     @objc dynamic   var pwd_user = "" // mettre en md5
     @objc dynamic   var email = ""
-    @objc dynamic   var owner : cat_user!
+   @objc dynamic   var owner : cat_user!
     @objc dynamic   var compte_user: compte!
     
     let clients = List<client>()
@@ -26,22 +26,22 @@ class user : Object {
     let notes = List<note_frais>()
     
 
-
+    
     override static func primaryKey() -> String? {
         return "id_user"
     }
     
-    convenience init(nom: String, prenom: String, email: String,password: String) {
+    convenience init(id_user: String, nom: String, prenom: String, email: String) {
         self.init()
-        self.id_user = UUID().uuidString.lowercased()
+        self.id_user = id_user
         self.nom = nom
         self.prenom = prenom
         self.email = email
-        self.pwd_user = password
+       // self.pwd_user = password
     }
     
-    static func addUserToBase(nom: String, prenom: String, email: String, password: String){
-        let per = user(nom: nom, prenom: prenom, email: email, password: password )
+     static func addUserToBase(id_user: String, nom: String, prenom: String, email: String){
+        let per = user(id_user: id_user, nom: nom, prenom: prenom, email: email)
         
         do{
             let realm = try! Realm()
@@ -53,8 +53,23 @@ class user : Object {
             debugPrint("error adding user to base")
         }
     }
+
+/*class use {
+    var id : String
+    var nom : String
+    var prenom : String
     
-    static func addClientToUser(_use: user, clein: client){
+    init(dictionary: [String : AnyObject],id: String) {
+    self.id = id
+        self.prenom = dictionary["first Name"] as! String
+        self.nom = dictionary["family Name"] as! String
+
+    }
+    
+    
+}*/
+    
+       func addClientToUser(_use: user, clein: client){
         let clnt = clein
         do{
             let realm = try! Realm()
@@ -66,7 +81,7 @@ class user : Object {
         }
     }
     
-    static func addProductToUser(_use: user, prod: produit){
+     func addProductToUser(_use: user, prod: produit){
         do{
             let realm = try! Realm()
             try realm.write {
@@ -77,7 +92,7 @@ class user : Object {
         }
     }
     
-    static func addFactureToUser(_use: user, fact: facture){
+     func addFactureToUser(_use: user, fact: facture){
         do{
             let realm = try! Realm()
             try realm.write {
@@ -99,7 +114,7 @@ class user : Object {
         }
     }
     
-    static func addDevisToUser(_use: user, devi: devis){
+     func addDevisToUser(_use: user, devi: devis){
         do{
             let realm = try! Realm()
             try realm.write {
@@ -110,7 +125,7 @@ class user : Object {
         }
     }
     
-    static func addNoteToUser(_use: user, note: note_frais){
+     func addNoteToUser(_use: user, note: note_frais){
         do{
             let realm = try! Realm()
             try realm.write {
@@ -121,6 +136,7 @@ class user : Object {
         }
     }
 }
+
 
 class cat_user : Object {
     @objc dynamic   var id_cat = ""
@@ -151,6 +167,11 @@ class client : Object {
     @objc dynamic   var nom_client = ""
     @objc dynamic   var prenom_client = ""
     @objc dynamic   var adresse_client = ""
+    @objc dynamic   var email_client = ""
+    @objc dynamic   var phone_client = ""
+    @objc dynamic   var id_utilisateur = ""
+
+
     
     @objc dynamic   var owner : user!
     
@@ -158,12 +179,15 @@ class client : Object {
         return "id_client"
     }
     
-    convenience init(nom: String, prenom: String, adresse: String) {
+    convenience init(nom: String, prenom: String, adresse: String, id: String, phone: String,  email: String, user: String ) {
         self.init()
-        self.id_client = UUID().uuidString.lowercased()
+        self.id_client = id
         self.nom_client = nom
         self.prenom_client = prenom
         self.adresse_client = adresse
+        self.phone_client = phone
+        self.email_client = email
+        self.id_utilisateur = user
     }
 
     
@@ -202,28 +226,58 @@ class produit : Object {
     
 }
 
+class listProduit: Object {
+    @objc dynamic var nomProd = ""
+    @objc dynamic var quantiteProd = 0
+    @objc dynamic var prixUnit = ""
+
+    override static func primaryKey() -> String? {
+        return "nomProd"
+    }
+    convenience  init(nomProd: String, prixUnit: String, quantiteProd: Int) {
+        self.init()
+        self.nomProd = nomProd
+        self.prixUnit = prixUnit
+        self.quantiteProd = quantiteProd
+       
+    }
+    
+}
+extension listProduit{
+    func writeToRealmLP() {
+        
+        try! uiRealm.write {
+            uiRealm.add(self, update: true)
+        }
+    }
+    
+}
 class facture : Object {
     @objc dynamic   var id_facture = ""
-    @objc dynamic   var date_fact = NSDate()
-    @objc dynamic   var montant_ttc = 0.0
+    @objc dynamic   var date_fact = ""
+    @objc dynamic   var client = ""
     @objc dynamic   var montant_ht = 0.0
+    @objc dynamic   var status = ""
     
-    let products = List<produit>()
+
+    
+    let products = List<listProduit>()
     @objc dynamic   var owner : user!
 
     override static func primaryKey() -> String? {
         return "id_facture"
     }
     
-    convenience  init(montant_ttc: Double, montant_ht: Double) {
+    convenience  init(client: String, montant_ht: Double, id: String, date: String, status: String) {
         self.init()
-        self.id_facture = UUID().uuidString.lowercased()
-        self.date_fact = NSDate()
-        self.montant_ttc = montant_ttc
+        self.id_facture = id
+        self.date_fact = date
+        self.client = client
         self.montant_ht = montant_ht
+        self.status = status
     }
     
-    static func addProduitToFcature(_fact: facture, prod: produit){
+    static func addProduitToFcature(_fact: facture, prod: listProduit){
         do{
             let realm = try! Realm()
             try realm.write {
@@ -281,7 +335,7 @@ class devis : Object {
         self.montant_ht = montant_ht
     }
     
-    static func addProduitToDevis(_devis: facture, prod: produit){
+    static func addProduitToDevis(_devis: facture, prod: listProduit){
         do{
             let realm = try! Realm()
             try realm.write {
@@ -343,25 +397,13 @@ class sold_compte : Object {
     
 
     
-    func setCompoundID(id: String) {
-        self.id = id
-        compoundKey = compoundKeyValue()
-    }
 
-    func setCompoundDate(date: NSDate) {
-        self.date = date
-        compoundKey = compoundKeyValue()
-    }
-    
-    dynamic lazy var compoundKey: String = self.compoundKeyValue()
     
     override static func primaryKey() -> String? {
-        return "compoundKey"
+        return "id"
     }
     
-    func compoundKeyValue() -> String {
-        return "\(id)\(date)"
-    }
+
     
     convenience  init(sold_compte: Double) {
         self.init()
@@ -375,42 +417,43 @@ class sold_compte : Object {
 class transactions : Object {
     
     @objc dynamic   var id_trans = ""
-    @objc dynamic   var date = NSDate()
+    @objc dynamic   var date = ""
+    @objc dynamic   var libelle = ""
+    @objc dynamic   var id_user = ""
     @objc dynamic   var montant_trans: Double = 0.0
     @objc dynamic   var owner: compte!
 
     
     
     
-    func setCompoundID(id_trans: String) {
-        self.id_trans = id_trans
-        compoundKey = compoundKeyValue()
-    }
-    
-    func setCompoundDate(date: NSDate) {
-        self.date = date
-        compoundKey = compoundKeyValue()
-    }
-    
-    dynamic lazy var compoundKey: String = self.compoundKeyValue()
-    
     override static func primaryKey() -> String? {
-        return "compoundKey"
+        return "id_trans"
     }
     
-    func compoundKeyValue() -> String {
-        return "\(id_trans)\(date)"
-    }
-    
-    convenience  init(montant_trans: Double) {
+    convenience  init(date: String, id: String, montant_trans: Double, libelle : String, id_user : String) {
         self.init()
-        self.id_trans = UUID().uuidString.lowercased()
-        self.date = NSDate()
+        self.id_trans = id
+        self.libelle = libelle
+        self.date = date
+        self.id_user = id_user
         self.montant_trans = montant_trans
         
     }
     
+    static func getAllTransactions() -> Results<transactions>? {
+        do {
+            let real = try Realm()
+            let transs = real.objects(transactions.self)
+            
+            return transs
+        } catch {
+                return nil
+        }
+    }
+        
+    
 }
+
 
 class employe : Object {
     @objc dynamic   var id_emp = ""
@@ -481,25 +524,13 @@ class heures_travail : Object {
     
     
     
-    func setCompoundID(id_emp: String) {
-        self.num_emp = id_emp
-        compoundKey = compoundKeyValue()
-    }
-    
-    func setCompoundDate(date: NSDate) {
-        self.date = date
-        compoundKey = compoundKeyValue()
-    }
-    
-    dynamic lazy var compoundKey: String = self.compoundKeyValue()
+  
     
     override static func primaryKey() -> String? {
-        return "compoundKey"
+        return "num_emp"
     }
     
-    func compoundKeyValue() -> String {
-        return "\(num_emp)\(date)"
-    }
+   
     
     
     convenience  init(heures: Double) {
@@ -511,4 +542,33 @@ class heures_travail : Object {
         
     }
     
+
 }
+
+extension user {
+    func writeToRealm() {
+        try! uiRealm.write {
+            uiRealm.add(self)
+        }
+    }
+}
+
+extension transactions {
+    func writeToRealme() {
+        
+        try! uiRealm.write {
+            uiRealm.add(self, update: true)
+        }
+    }
+}
+
+extension client {
+    func writeToRealme() {
+        
+        try! uiRealm.write {
+            uiRealm.add(self, update: true)
+        }
+    }
+}
+
+

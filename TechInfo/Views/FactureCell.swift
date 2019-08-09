@@ -11,7 +11,11 @@ import UIKit
 class FactureCell: UITableViewCell {
 
 
+   
+    @IBOutlet weak var invoiceNumLbl: UILabel!
     
+    @IBOutlet weak var montantLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         

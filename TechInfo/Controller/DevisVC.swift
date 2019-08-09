@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
+import Realm
+import Realm.Dynamic
+
 
 class DevisVC: UITableViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         print(Realm.Configuration.defaultConfiguration.fileURL!)
         // Do any additional setup after loading the view.
     }
     

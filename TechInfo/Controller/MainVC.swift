@@ -35,17 +35,14 @@ class MainVC: UIViewController {
     var connectUser = false
     override func viewDidLoad() {
         super.viewDidLoad()
-      /*  print("hello world")
-       let realm = try! Realm()
+      print("hello world")
+      /* let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL)
         
-        user.addUserToBase(nom: "adel", prenom: "mansour", email: "adeldjazagro@gmail.com", password: "coucou")*/
-        
-        
+ 
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.*/
         
-        self.connectUser = false
     }
     
     

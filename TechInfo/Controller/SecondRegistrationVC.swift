@@ -35,6 +35,17 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
     }
     var imagePicker:UIImagePickerController!
 
+    @IBAction func BackToMain(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signInVC = storyboard.instantiateViewController(withIdentifier: "MainVC")
+        self.present(signInVC,animated: true, completion: nil)
+        
+    }
     
     //var test = false
     var Utilisateur = [
@@ -69,7 +80,7 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
         imagePicker.delegate = self
         
         ReturnBtn.isHidden = true
-        ReturnBtn.addTarget(self, action:#selector(logout), for: .touchUpInside)
+       // ReturnBtn.addTarget(self, action:#selector(logout), for: .touchUpInside)
         
         
     }
@@ -95,6 +106,30 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
         let adress = BankAccountTF.text
         let formFilled = username != nil && username != "" && email != nil && email != "" && password != nil && password != "" && adress != "" && adress != nil
         //setContinueButton(enabled: formFilled)
+    }
+    
+    
+    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let storageRef = Storage.storage().reference().child("users/\(uid)/images")
+        
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+        
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+                storageRef.downloadURL { url, error in
+                    completion(url)
+                    print("image uploaded")
+                }
+            } else {
+                // failed
+                completion(nil)
+            }
+        }
     }
     
     @objc func addArtist(){
@@ -149,7 +184,8 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
                                 
                                 self.saveProfile(name: name, adress: companyAdress, profileImageURL: url!, familyName: familyName, companyName: company, bankAccount: BankAccount, bankAccountPwd: BankPwd){ success in
                                     if success {
-                                        self.dismiss(animated: true, completion: nil)
+                                        print("success")
+                                        //self.dismiss(animated: true, completion: nil)
                                     } else {
                                         print("1")
                                         self.resetForm()
@@ -165,6 +201,8 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
                             }
                         }
                     } else {
+                        print("Error: \(error!.localizedDescription)")
+
                         self.resetForm()
                         print("3")
 
@@ -198,28 +236,7 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
 
     
     
-    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let storageRef = Storage.storage().reference().child("users/\(uid)")
-        
-        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
-        
-        
-        let metaData = StorageMetadata()
-        metaData.contentType = "image/jpg"
-        
-        storageRef.putData(imageData, metadata: metaData) { metaData, error in
-            if error == nil, metaData != nil {
-                storageRef.downloadURL { url, error in
-                    completion(url)
-                    print("image uploaded")
-                }
-            } else {
-                // failed
-                completion(nil)
-            }
-        }
-    }
+    
     
     
     func saveProfile(name:String, adress:String, profileImageURL:URL, familyName:String, companyName:String, bankAccount:String, bankAccountPwd:String , completion: @escaping ((_ success:Bool)->())) {
@@ -235,8 +252,8 @@ class SecondRegistrationVC: UIViewController, UITextFieldDelegate {
             "adress": adress,
             "family Name": familyName,
             "company Name": companyName,
-            "bank Account": bankAccount,
-            "bank Account Pwd": bankAccountPwd
+            "company Phone": bankAccount,
+            "company Email": bankAccountPwd
             ] as [String:Any]
         
         databaseRef.setValue(userObject) { error, ref in

@@ -15,7 +15,7 @@ class NoteDescVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = tap[myIndex]
-        descLbl.text = tapDetail[myIndex]
+       // descLbl.text = tapDetail[myIndex]
     }
     
 

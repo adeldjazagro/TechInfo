@@ -1,22 +1,31 @@
 //
-//  FactureDescVC.swift
+//  PopUpProduitVC.swift
 //  TechInfo
 //
-//  Created by Adel on 04/06/2019.
+//  Created by Adel on 15/07/2019.
 //  Copyright © 2019 Adel. All rights reserved.
 //
 
 import UIKit
 
-class FactureDescVC: UIViewController {
-
+class PopUpProduitVC: UIViewController {
+ //let x = FactureTestVC()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        //x.navigationItem.hidesBackButton = true
+
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func closePopProduitBtn(_ sender: Any) {
+        
+        self.view.removeFromSuperview()
+        //self.navigationItem.hidesBackButton = false
+       // FactureTestVC.view.navigationItem.hidesBackButton = false
+    }
+    
     /*
     // MARK: - Navigation
 

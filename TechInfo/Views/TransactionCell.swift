@@ -18,6 +18,11 @@ class TransactionCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    func configure(trans: transactions){
+        dateLbl.text = trans.date
+        montantLbl.text = "\(trans.montant_trans) €"
+        libelleLbl.text = trans.libelle
+    }
 
 
 
